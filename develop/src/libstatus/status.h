@@ -2,6 +2,8 @@
 #include <string>
 using namespace std;
 
+#include "species.h"
+#include "individual.h"
 
 ////********************************************************////
 ////    Status
@@ -17,11 +19,11 @@ public:
     int getSpecialAttack();
     int getSpecialDefense();
     int getSpeed();
+    void setSpecies(Species species);
+    void setIndividual(Individual individual);
 private:
-    int heat_point = 10;
-    int physical_attack = 10;
-    int physical_defense = 10;
-    int special_attack = 10;
-    int special_defense = 10;
-    int speed = 10;
+    int level = 5;
+    int base_point = 10;
+    Species _species;
+    Individual _individual;
 };

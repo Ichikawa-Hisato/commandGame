@@ -8,10 +8,20 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 project(SampleSrc CXX)
 
 # compile library file
-set(STATUS_NAME src/lib_status/header/status.h src/lib_status/status.cpp)
-add_library(STATUS ${STATUS_NAME})
+## status src library
+set(STATUS_NAME
+    src/libstatus/status.h
+    src/libstatus/status.cpp
+    src/libstatus/species.h
+    src/libstatus/individual.h
+    )
+add_library(Status STATIC ${STATUS_NAME})
 
-# add include pass
-include_directories(${PROJECT_SOURCE_DIR}/src/lib_status/header)
+# execution file
+add_executable(main src/main.cpp)
 
-add_executable(main src/main.cpp ${STATUS})
+# link to main
+target_link_libraries(main Status)
+
+# set include directory
+target_include_directories(Status INTERFACE ./src/libstatus)
