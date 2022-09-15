@@ -9,5 +9,11 @@ project(SampleSrc CXX)
 
 # compile library file
 ## status src library
-set(STATUS_NAME status.h status.cpp species.h individual.h)
+set(STATUS_NAME
+    status.h
+    status.cpp
+    species.h
+    species.cpp
+    individual.h
+    speciesStatusTable.h)
 add_library(Status STATIC ${STATUS_NAME})

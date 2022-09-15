@@ -9,7 +9,6 @@ using namespace std;
 ////********************************************************////
 
 
-
 // heat_point Calc
 // (species*2+_individual*6)*level/100 + level + base_point
 int Status::getHeatPoint()

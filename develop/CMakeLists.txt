@@ -13,7 +13,10 @@ set(STATUS_NAME
     src/libstatus/status.h
     src/libstatus/status.cpp
     src/libstatus/species.h
+    src/libstatus/species.cpp
     src/libstatus/individual.h
+    src/libstatus/individual.cpp
+    src/libstatus/speciesStatusTable.h
     )
 add_library(Status STATIC ${STATUS_NAME})
 
