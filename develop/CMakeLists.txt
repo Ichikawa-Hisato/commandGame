@@ -10,30 +10,30 @@ project(SampleSrc CXX)
 # compile library file
 ## status src library
 set(STATUS_NAME
-    src/libstatus/status.h
-    src/libstatus/status.cpp
-    src/libstatus/species.h
-    src/libstatus/species.cpp
-    src/libstatus/individual.h
-    src/libstatus/individual.cpp
-    src/libstatus/speciesStatusTable.h
+    src/Status/status.h
+    src/Status/status.cpp
+    src/Status/species.h
+    src/Status/species.cpp
+    src/Status/individual.h
+    src/Status/individual.cpp
+    src/Status/speciesStatusTable.h
     )
-add_library(Status STATIC ${STATUS_NAME})
+add_library(STATUS STATIC ${STATUS_NAME})
 
 ## battle src library
 set(BATTLE_NAME
-    src/libbattle/battle.cpp
-    src/libbattle/battle.h
+    src/Battle/battle.cpp
+    src/Battle/battle.h
     )
-add_library(Battle STATIC ${BATTLE_NAME})
+add_library(BATTLE STATIC ${BATTLE_NAME})
 
 # execution file
 add_executable(main src/main.cpp)
 
 # link to main
-target_link_libraries(Battle Status)
-target_link_libraries(main Status Battle)
+target_link_libraries(BATTLE STATUS)
+target_link_libraries(main STATUS BATTLE)
 
 # set include directory
-target_include_directories(Status INTERFACE ./src/libstatus)
-target_include_directories(Battle INTERFACE ./src/libbattle)
+target_include_directories(STATUS INTERFACE ./src/Status)
+target_include_directories(BATTLE INTERFACE ./src/Battle)
