@@ -27,13 +27,22 @@ set(BATTLE_NAME
     )
 add_library(BATTLE STATIC ${BATTLE_NAME})
 
+## stream text src library
+set(STREAM_TEXT_NAME
+    src/StreamText/streamText.cpp
+    src/StreamText/streamText.h
+    )
+add_library(STREAM_TEXT STATIC ${STREAM_TEXT_NAME})
+
 # execution file
 add_executable(main src/main.cpp)
 
 # link to main
 target_link_libraries(BATTLE STATUS)
-target_link_libraries(main STATUS BATTLE)
+target_link_libraries(STREAM_TEXT STATUS BATTLE)
+target_link_libraries(main STATUS BATTLE STREAM_TEXT)
 
 # set include directory
 target_include_directories(STATUS INTERFACE ./src/Status)
 target_include_directories(BATTLE INTERFACE ./src/Battle)
+target_include_directories(STREAM_TEXT INTERFACE ./src/StreamText)
