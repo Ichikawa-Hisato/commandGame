@@ -12,6 +12,7 @@ using namespace std;
 void Individual::readIndividualStatus(std::string name)
 {
     indiStatTbl.push_back({"hero", 10, 10, 5, 3, 5, 10});
+    indiStatTbl.push_back({"devil", 10, 10, 10, 10, 10, 10});
 
     std::cout << "readIndividualStatus::" << name << std::endl;
 

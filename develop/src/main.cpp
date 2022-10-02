@@ -1,34 +1,46 @@
 #include <iostream>
+#include <thread>
+#include <memory>
+#include <unistd.h>
 #include "status.h"
-#include "species.h"
-#include "individual.h"
+#include "battle.h"
 using namespace std;
+
+void view_status(string name, Status status);
 
 int main()
 {
     Status hero_status;
-    Species hero_species;
-    Individual hero_individual;
+    hero_status.setName("hero");
 
     Status devil_status;
-    Species devil_species;
+    devil_status.setName("devil");
 
-    hero_species.readSpeciesStatus("hero");
-    hero_status.setSpecies(hero_species);
+    Battle battle;
+    int damage;
 
-    hero_individual.readIndividualStatus("hero");
-    hero_status.setIndividual(hero_individual);
-
-    std::cout << "Hero Status Heat   : " << hero_status.getHeatPoint() << std::endl;
-    std::cout << "Hero Status attack : " << hero_status.getPhysicalAttack() << std::endl;
-    std::cout << "Hero Status defense : " << hero_status.getPhysicalDefense() << std::endl;
+    view_status("Hero", hero_status);
 
     std::cout << std::endl;
 
-    devil_species.readSpeciesStatus("devil");
-    devil_status.setSpecies(devil_species);
+    view_status("Devil", devil_status);
+    sleep(1);
 
-    std::cout << "Devil Status Heat   : " << devil_status.getHeatPoint() << std::endl;
-    std::cout << "Devil Status attack : " << devil_status.getPhysicalAttack() << std::endl;
-    std::cout << "Devil Status defense : " << devil_status.getPhysicalDefense() << std::endl;
+    std::cout << std::endl;
+    // damage = battle.damage_step(devil_status, hero_status);
+    // hero_status.setHeatPoint(hero_status.getHeatPoint() - damage);
+    battle.battle_phase(devil_status, hero_status);
+
+    std::cout << std::endl;
+    view_status("Hero", hero_status);
+    std::cout << std::endl;
+    view_status("Devil", devil_status);
+}
+
+void view_status(string name, Status status)
+{
+    std::cout << name << " Status Level   : " << status.getLevel() << std::endl;
+    std::cout << name << " Status Heat    : " << status.getHeatPoint() << std::endl;
+    std::cout << name << " Status attack  : " << status.getPhysicalAttack() << std::endl;
+    std::cout << name << " Status defense : " << status.getPhysicalDefense() << std::endl;
 }

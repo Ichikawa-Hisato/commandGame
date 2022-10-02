@@ -1,13 +1,13 @@
 # commandGame
 2022/9/13  
-©åŠwK‚Ì‚½‚ßACUI‚ÌRPG Game‚ğì¬‚·‚éB  
-* ƒL[ƒ[ƒh
+è‡ªä¸»å­¦ç¿’ã®ãŸã‚ã€CUIã®RPG Gameã‚’ä½œæˆã™ã‚‹ã€‚  
+* ã‚­ãƒ¼ãƒ¯ãƒ¼ãƒ‰
     * C++ 14/17
         * thread
-        * callbackŠÖ”
-    * Objectvl
+        * callbacké–¢æ•°
+    * ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆæŒ‡å‘
     * CMake (Windows & Linux Build)
-# ƒZƒbƒgƒAƒbƒvè‡
-* WebApp‚ğQÆ
+# ã‚»ãƒƒãƒˆã‚¢ãƒƒãƒ—æ‰‹é †
+* WebAppã‚’å‚ç…§
     * https://github.com/Ichikawa-Hisato/WebApp
         * README.md

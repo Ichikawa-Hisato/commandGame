@@ -20,11 +20,20 @@ set(STATUS_NAME
     )
 add_library(Status STATIC ${STATUS_NAME})
 
+## battle src library
+set(BATTLE_NAME
+    src/libbattle/battle.cpp
+    src/libbattle/battle.h
+    )
+add_library(Battle STATIC ${BATTLE_NAME})
+
 # execution file
 add_executable(main src/main.cpp)
 
 # link to main
-target_link_libraries(main Status)
+target_link_libraries(Battle Status)
+target_link_libraries(main Status Battle)
 
 # set include directory
 target_include_directories(Status INTERFACE ./src/libstatus)
+target_include_directories(Battle INTERFACE ./src/libbattle)

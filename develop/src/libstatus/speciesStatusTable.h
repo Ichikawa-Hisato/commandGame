@@ -28,7 +28,7 @@ public:
     }speciesStatTbl;
 
     std::vector<speciesStatTbl> specStatTbl = {
-        {"hero", 50, 30, 20, 25, 30, 20},
+        {"hero", 50, 60, 20, 25, 30, 20},
         {"devil", 60, 20, 50, 15, 60, 60},
     };
 };
